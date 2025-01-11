@@ -1,0 +1,57 @@
+//TODO - * tinder-clone *
+
+Project Setup
+
+For Backend/api
+1) npm init -y
+2) npm i express@4.21.0 dotenv@16.4.5 bcryptjs@2.4.3 cloudinary@2.5.0 cookie-parser@1.4.6 jsonwebtoken@9.0.2 mongoose@8.7.0 socket.io@4.8.0
+3) npm i nodemon@3.1.7 -D (Dev Dependency)
+
+For Frontend/client
+1) npm create vite@latest .
+2) select => React => Javascript/Typescript
+3) npm install
+4) npm install -D tailwindcss postcss autoprefixer
+5) npx tailwindcss init -p
+6) Copy paste the tailwind.config.js from site to the generated one.
+7) copy and replace the index.css from site
+8) Delete the App.css/assets 
+9) Delete the function in App.jsx
+10) npm i react-router-dom@6.26.2 zustand@5.0.0-rc.2 axios@1.7.7 react-hot-toast@2.4.1
+11) root folder npm i cors@2.8.5
+12) npm i lucide-react@0.447.0 
+13) npm i react-tinder-card@1.6.4
+14) npm i @react-spring/web
+
+Visit daisyui
+15) npm i -D daisyui@4.12.12
+16) Copy and paste the tailwind config. code
+    under plugins: => import (daisyui);
+
+
+//SECTION - For the realtime matches/ and update we are using socket.io
+
+                         Backend                client
+________________       ____________          ____________   
+|    Express    |      |          |          |          |    
+|               |      |__________|          |__________|
+|               |       Socket.io          Socket.io-client
+|_______________|
+
+1) Put Socket server on top of express server
+   api=>folder(socket)
+    * socket.js
+    * 
+
+   client => src => folder(socket)
+    * socket.client.js
+    * npm i socket.io-client@4.8.0
+
+2) Initialize socket in api/server.js
+3) create a CLIENT_URL = http://localhost:5173 in .env
+4) pase the CLIENT_URL inside the server.js & socket.server.js in origin field.   
+
+5) To delete all the existing user in DataBase
+   =>  node .\api\seeds\user.js
+
+6) in client npm i emoji-picker-react@4.12.0   
